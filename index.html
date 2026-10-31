@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Felicidades, mi neni · Vas por mitad de camino</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,400;1,9..144,600&family=Figtree:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FFF6F6;
+      --blush: #FBE3E6;
+      --ink: #3F1726;
+      --muted: #7A4A5A;
+      --rose: #C2456B;
+      --sage: #6E9B7B;
+      --paper: #FFFFFF;
+      --on-rose: #FFF6F6;
+      --pic1: #F6CBD3;
+      --pic2: #F3D9C5;
+      --pic3: #CFE2D2;
+      --shadow: rgba(63, 23, 38, .18);
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #1E0F16;
+        --blush: #2C1621;
+        --ink: #FBE9EC;
+        --muted: #D3AAB7;
+        --rose: #F08CA9;
+        --sage: #8FC19D;
+        --paper: #2A1620;
+        --on-rose: #1E0F16;
+        --pic1: #5A2A3C;
+        --pic2: #55372B;
+        --pic3: #2F4A3A;
+        --shadow: rgba(0, 0, 0, .5);
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #1E0F16;
+      --blush: #2C1621;
+      --ink: #FBE9EC;
+      --muted: #D3AAB7;
+      --rose: #F08CA9;
+      --sage: #8FC19D;
+      --paper: #2A1620;
+      --on-rose: #1E0F16;
+      --pic1: #5A2A3C;
+      --pic2: #55372B;
+      --pic3: #2F4A3A;
+      --shadow: rgba(0, 0, 0, .5);
+      color-scheme: dark;
+    }
+
+    html {
+      scroll-padding-top: env(safe-area-inset-top, 0px);
+      scroll-behavior: smooth
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Figtree, system-ui, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.65
+    }
+
+    h1,
+    h2 {
+      font-family: Fraunces, Georgia, serif;
+      margin: 0
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--rose);
+      outline-offset: 3px
+    }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem)
+    }
+
+    /* hero */
+    .hero {
+      text-align: center;
+      padding: clamp(3.5rem, 10vw, 7rem) 0 clamp(2.5rem, 6vw, 4rem);
+      background: radial-gradient(ellipse at 50% 0%, var(--blush), transparent 70%)
+    }
+
+    .hero .small {
+      font-family: Fraunces, serif;
+      font-style: italic;
+      font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+      color: var(--rose);
+      margin: 0 0 1rem
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 10vw, 7rem);
+      font-weight: 700;
+      letter-spacing: -.03em;
+      line-height: .98
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 600;
+      color: var(--rose)
+    }
+
+    .hero .lead {
+      max-width: 44ch;
+      margin: 1.75rem auto 2rem;
+      font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+      color: var(--muted)
+    }
+
+    .heart {
+      display: inline-block;
+      color: var(--rose);
+      animation: beat 2.4s ease-in-out 3
+    }
+
+    @keyframes beat {
+
+      0%,
+      100% {
+        transform: scale(1)
+      }
+
+      15% {
+        transform: scale(1.25)
+      }
+
+      30% {
+        transform: scale(1)
+      }
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--rose);
+      color: var(--on-rose);
+      font-weight: 600;
+      text-decoration: none;
+      padding: .9rem 1.8rem;
+      border-radius: 999px
+    }
+
+    .btn:hover {
+      filter: brightness(1.08)
+    }
+
+    /* carta */
+    .letter-sec {
+      padding: 1rem 0 clamp(3rem, 7vw, 5rem)
+    }
+
+    .letter {
+      max-width: 660px;
+      margin: 0 auto;
+      background: var(--paper);
+      border-radius: 6px;
+      padding: clamp(1.75rem, 5vw, 3.25rem);
+      box-shadow: 0 18px 40px -18px var(--shadow);
+      border-top: 6px solid var(--rose)
+    }
+
+    .letter h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+      font-weight: 600;
+      font-style: italic;
+      margin-bottom: 1.25rem
+    }
+
+    .letter p {
+      margin: 0 0 1.1rem;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.15rem;
+      line-height: 1.75
+    }
+
+    .letter .sign {
+      font-style: italic;
+      color: var(--rose);
+      margin: 1.5rem 0 0;
+      font-size: 1.3rem
+    }
+
+    /* collage */
+    .collage-sec {
+      background: var(--blush);
+      padding: clamp(3rem, 7vw, 5rem) 0
+    }
+
+    .collage-head {
+      text-align: center;
+      margin-bottom: 2.5rem
+    }
+
+    .collage-head h2 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -.02em
+    }
+
+    .collage-head p {
+      margin: .75rem auto 0;
+      color: var(--muted);
+      max-width: 42ch
+    }
+
+    .collage {
+      column-count: 3;
+      column-gap: 22px
+    }
+
+    .shot {
+      break-inside: avoid;
+      margin: 0 0 22px;
+      background: var(--paper);
+      padding: 9px 9px 0;
+      border-radius: 4px;
+      box-shadow: 0 10px 22px -10px var(--shadow)
+    }
+
+    .shot:nth-child(odd) {
+      transform: rotate(-1.4deg)
+    }
+
+    .shot:nth-child(even) {
+      transform: rotate(1.2deg)
+    }
+
+    .shot:nth-child(3n) {
+      transform: rotate(.5deg)
+    }
+
+    .shot .open {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: none;
+      cursor: zoom-in
+    }
+
+    .shot img {
+      display: block;
+      width: 100%;
+      height: auto
+    }
+
+    .shot figcaption {
+      font-family: Fraunces, serif;
+      font-style: italic;
+      font-size: .95rem;
+      text-align: center;
+      padding: .5rem 0 .6rem
+    }
+
+    dialog {
+      border: 0;
+      background: transparent;
+      padding: 0;
+      max-width: 94vw;
+      max-height: 94vh
+    }
+
+    dialog::backdrop {
+      background: rgba(30, 10, 18, .85)
+    }
+
+    dialog img {
+      display: block;
+      max-width: 94vw;
+      max-height: 90vh;
+      border-radius: 6px
+    }
+
+    /* cierre */
+    .close {
+      text-align: center;
+      padding: clamp(3.5rem, 8vw, 6rem) 0
+    }
+
+    .close h2 {
+      font-size: clamp(2rem, 5.5vw, 3.6rem);
+      font-weight: 700;
+      max-width: 16ch;
+      margin: 0 auto 1.25rem;
+      letter-spacing: -.02em
+    }
+
+    .close p {
+      max-width: 44ch;
+      margin: 0 auto 2rem;
+      color: var(--muted)
+    }
+
+    footer {
+      text-align: center;
+      padding: 0 0 3rem;
+      color: var(--muted);
+      font-size: .92rem
+    }
+
+    @media (max-width:820px) {
+      .collage {
+        column-count: 2;
+        column-gap: 14px
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      .heart {
+        animation: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="small">Para mi neni, con todo mi amor</p>
+      <h1>Lo lograste,<br><em>mi princesa</em> <span class="heart" aria-hidden="true">♥</span></h1>
+      <p class="lead">Terminaste tu rotación comunitaria, vas por la mitad del camino y yo no podría estar más orgulloso
+        de ti.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="letter-sec" id="carta">
+      <div class="wrap">
+        <article class="letter">
+          <h2>Mi nenita:</h2>
+          <p>Durante tres meses te vi entrar y salir de la Martha, a veces con muchas ganas y otras con pocas, pero
+            siempre sin rendirte. Aprendías de cada persona y volvías a contarme tus historias, emocionada. Cada semana
+            publicabas tus fotos y yo las miraba con una sonrisa.</p>
+          <p>Sé lo que te costó: las idas y venidas, el cansancio, los días largos. Aun así lo hiciste con cariño e
+            inteligencia, como haces todo. Vas a ser una nutricionista maravillosa, porque cuidas a la gente de verdad.
+          </p>
+          <p>Gracias por dejarme ser parte de esta etapa. Me encantó recogerte cada día, ir a tu casa y pasar las tardes
+            juntos. Felicidades por cerrarla tan bonito. Lo que viene será mucho mejor.</p>
+          <p class="sign">Atentamente,<br>Pupi</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="collage-sec" id="collage">
+      <div class="wrap">
+        <div class="collage-head">
+          <h2>Tus 12 semanas, mi amor</h2>
+          <p>Cada foto que compartiste, juntas en un solo lugar para recordar todo lo que hiciste.</p>
+        </div>
+        <div class="collage">
+          <figure class="shot"><button type="button" class="open" aria-label="Ampliar foto de la semana 1"><img
+                src="fotos/semana-1.jpg" width="480" height="853" alt="Foto de la semana 1 de la rotación comunitaria"
+                loading="lazy"></button>
+            <figcaption>Semana 1<br>Acercamiento a la comunidad de la Martha</figcaption>
+          </figure>
+          <figure class="shot"><button type="button" class="open" aria-label="Ampliar foto de la semana 2"><img
+                src="fotos/semana-2.jpg" width="800" height="600" alt="Foto de la semana 2 de la rotación comunitaria"
+                loading="lazy"></button>
+            <figcaption>Semana 2<br>Charla sobre lactancia materna</figcaption>
+          </figure>
+          <figure class="shot"><button type="button" class="open" aria-label="Ampliar foto de la semana 3"><img
+                src="fotos/semana-3.jpg" width="480" height="640" alt="Foto de la semana 3 de la rotación comunitaria"
+                loading="lazy"></button>
+            <figcaption>Semana 3<br>Salida extramural al CDI Medallas Milagrosas</figcaption>
+          </figure>
+          <figure class="shot"><button type="button" class="open" aria-label="Ampliar foto de la semana 4"><img
+                src="fotos/semana-4.jpg" width="675" height="900" alt="Foto de la semana 4 de la rotación comunitaria"
+                loading="lazy"></button>
+            <figcaption>Semana 4<br>Libreta Integral de Salud</figcaption>
+          </figure>
+          <figure class="shot"><button type="button" class="open" aria-label="Ampliar foto de la semana 5"><img
+                src="fotos/semana-5.jpg" width="675" height="900" alt="Foto de la semana 5 de la rotación comunitaria"
+                loading="lazy"></button>
+            <figcaption>Semana 5<br>Visitas domiciliarias a pacientes</figcaption>
+          </figure>
+          <figure class="shot"><button type="button" class="open" aria-label="Ampliar foto de la semana 6"><img
+                src="fotos/semana-6.jpg" width="800" height="600" alt="Foto de la semana 6 de la rotación comunitaria"
+                loading="lazy"></button>
+            <figcaption>Semana 6<br>Taller de alimentación complementaria</figcaption>
+          </figure>
+          <figure class="shot"><button type="button" class="open" aria-label="Ampliar foto de la semana 7"><img
+                src="fotos/semana-7.jpg" width="800" height="600" alt="Foto de la semana 7 de la rotación comunitaria"
+                loading="lazy"></button>
+            <figcaption>Semana 7<br>Cocina en vivo</figcaption>
+          </figure>
+          <figure class="shot"><button type="button" class="open" aria-label="Ampliar foto de la semana 8"><img
+                src="fotos/semana-8.jpg" width="480" height="640" alt="Foto de la semana 8 de la rotación comunitaria"
+                loading="lazy"></button>
+            <figcaption>Semana 8<br>Jornada de visitas domiciliaria</figcaption>
+          </figure>
+          <figure class="shot"><button type="button" class="open" aria-label="Ampliar foto de la semana 9"><img
+                src="fotos/semana-9.jpg" width="800" height="450" alt="Foto de la semana 9 de la rotación comunitaria"
+                loading="lazy"></button>
+            <figcaption>Semana 9<br>Culminación de proyecto de la materia de Intervención Nutricional Comunitaria
+            </figcaption>
+          </figure>
+          <figure class="shot"><button type="button" class="open" aria-label="Ampliar foto de la semana 10"><img
+                src="fotos/semana-10.jpg" width="480" height="640" alt="Foto de la semana 10 de la rotación comunitaria"
+                loading="lazy"></button>
+            <figcaption>Semana 10<br>Día Mundial de la Alimentación</figcaption>
+          </figure>
+          <figure class="shot"><button type="button" class="open" aria-label="Ampliar foto de la semana 11"><img
+                src="fotos/semana-11.jpg" width="480" height="640" alt="Foto de la semana 11 de la rotación comunitaria"
+                loading="lazy"></button>
+            <figcaption>Semana 11<br>Charla educativa sobre el uso de plantas medicinales</figcaption>
+          </figure>
+          <figure class="shot"><button type="button" class="open" aria-label="Ampliar foto de la semana 12"><img
+                src="fotos/semana-12.jpg" width="800" height="600" alt="Foto de la semana 12 de la rotación comunitaria"
+                loading="lazy"></button>
+            <figcaption>Semana 12<br>Última semana en la rotación de Nutrición Comunitaria</figcaption>
+          </figure>
+        </div>
+        <dialog id="dlg"><img alt=""></dialog>
+      </div>
+    </section>
+
+    <section class="close">
+      <div class="wrap">
+        <h2>Estoy muy orgulloso de ti</h2>
+        <p>Disfruta tu logro, te lo mereces. Yo sigo aquí, el primero en celebrarte.</p>
+        <a class="btn" href="https://www.linkedin.com/in/aileen-mogrovejo-mor%C3%A1n-453655271/" target="_blank"
+          rel="noopener">Ver su LinkedIn</a>
+      </div>
+    </section>
+  </main>
+  <footer>Hecho con amor ♥ · Felicidades por culminar tu rotación comunitaria. Eres lo que más amo en este mundo
+  </footer>
+
+  <script>
+    (function () {
+      var d = document.getElementById('dlg'), im = d.querySelector('img');
+      document.querySelectorAll('.shot .open').forEach(function (b) {
+        b.addEventListener('click', function () { im.src = b.querySelector('img').src; d.showModal(); });
+      });
+      d.addEventListener('click', function () { d.close(); });
+    })();
+  </script>
+</body>
+
+</html>
